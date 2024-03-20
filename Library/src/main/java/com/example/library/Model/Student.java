@@ -9,22 +9,22 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "student",uniqueConstraints = @UniqueConstraint(columnNames = "StudentId"))
+@Table(name = "student",uniqueConstraints = @UniqueConstraint(columnNames = "student_id"))
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "StudentID")
+    @Column(name = "student_id")
     private Long studentId;
 
-    @Column(name = "Username", length = 50)
+    @Column(name = "username", length = 50)
     private String username;
 
-    @Column(name = "Password", length = 255)
+    @Column(name = "password", length = 255)
     private String password;
 
-    @Column(name = "Email", length = 255)
+    @Column(name = "email", length = 255)
     private String email;
 
-    @Column(name = "FullName", length = 100)
+    @Column(name = "fullName", length = 100)
     private String fullName;
 }

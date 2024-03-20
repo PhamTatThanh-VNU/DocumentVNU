@@ -9,17 +9,17 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "subject", uniqueConstraints = @UniqueConstraint(columnNames = "SubjectId"))
+@Table(name = "subject", uniqueConstraints = @UniqueConstraint(columnNames = "subject_id"))
 public class Subject{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "SubjectID")
+    @Column(name = "subject_id")
     private Long subjectId;
 
-    @Column(name = "SubjectName", length = 255)
+    @Column(name = "subject_name", length = 255)
     private String subjectName;
 
     @ManyToOne
-    @JoinColumn(name = "BlockID")
+    @JoinColumn(name = "block_id")
     private KnowledgeBlock knowledgeBlock;
 }

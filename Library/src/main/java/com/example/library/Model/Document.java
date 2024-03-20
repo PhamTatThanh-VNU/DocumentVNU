@@ -11,30 +11,30 @@ import java.sql.Timestamp;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "document", uniqueConstraints = @UniqueConstraint(columnNames = "DocumentID"))
+@Table(name = "document", uniqueConstraints = @UniqueConstraint(columnNames = "document_id"))
 public class Document{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "DocumentID")
+    @Column(name = "document_id")
     private Long documentId;
 
-    @Column(name = "DocumentTitle", length = 255)
+    @Column(name = "document_title", length = 255)
     private String documentTitle;
 
-    @Column(name = "DocumentContent")
+    @Column(name = "document_content")
     private String documentContent;
 
     @Lob
-    @Column(name = "DocumentFile")
+    @Column(name = "document_file")
     private String documentFile;
 
-    @Column(name = "DateCreated")
+    @Column(name = "date_created")
     private Timestamp dateCreated;
 
-    @Column(name = "IsApproved")
+    @Column(name = "is_approved")
     private boolean isApproved;
 
     @ManyToOne
-    @JoinColumn(name = "SubjectID")
+    @JoinColumn(name = "subject_id")
     private Subject subject;
 }

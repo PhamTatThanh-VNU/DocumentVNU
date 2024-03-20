@@ -9,13 +9,13 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "department",uniqueConstraints = @UniqueConstraint(columnNames = "DepartnameId"))
+@Table(name = "department",uniqueConstraints = @UniqueConstraint(columnNames = "department_id"))
 public class Department  {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "DepartmentId")
+    @Column(name = "department_id")
     private Long departmentId;
 
-    @Column(name = "DepartmentName")
+    @Column(name = "department_name")
     private String departmentName;
 }

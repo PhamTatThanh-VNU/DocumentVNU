@@ -9,14 +9,14 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "admin",uniqueConstraints = @UniqueConstraint(columnNames = "AdminId"))
+@Table(name = "admin",uniqueConstraints = @UniqueConstraint(columnNames = "admin_id"))
 public class Admin  {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "AdminID")
+    @Column(name = "admin_id")
     private Long adminId;
 
     @ManyToOne
-    @JoinColumn(name = "StudentID")
+    @JoinColumn(name = "student_id")
     private Student student;
 }

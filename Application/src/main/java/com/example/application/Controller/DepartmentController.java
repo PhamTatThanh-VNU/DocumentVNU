@@ -2,21 +2,18 @@ package com.example.application.Controller;
 
 import com.example.library.Model.Department;
 import com.example.library.Service.DepartmentService;
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Controller;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-import java.util.Optional;
 
-@Controller
-@RequiredArgsConstructor
+@RestController
 public class DepartmentController {
+    @Autowired
     private DepartmentService departmentService;
     @GetMapping("/test")
-    public Optional<Department> Hello(@RequestParam Long id){
-        Optional<Department> department = departmentService.findById(id);
-        return department;
+    public List<Department> TestFunc(){
+        return departmentService.findAll();
     }
 }
