@@ -1,5 +1,6 @@
 package com.example.library.Service.ServiceImpl;
 
+import com.example.library.DTO.KnowledgeBlockDTO;
 import com.example.library.Model.Department;
 import com.example.library.Model.KnowledgeBlock;
 import com.example.library.Repository.KnowledgeBlockRepository;
@@ -27,15 +28,7 @@ public class KnowledgeBlocklmpl implements KnowledgeBlockService {
     }
 
     @Override
-    public Optional<KnowledgeBlock> findByDepartment(String department) {
-        List<KnowledgeBlock> knowledgeBlockList = findAll();
-        Optional<KnowledgeBlock> optional = Optional.empty();
-        for (KnowledgeBlock knowledgeBlock: knowledgeBlockList) {
-            if (department.equals(knowledgeBlock.getDepartment().getDepartmentName())) {
-                optional = Optional.of(knowledgeBlock);
-                break;
-            }
-        }
-        return optional;
+    public List<KnowledgeBlockDTO> findByDepartment(Long idDepartment) {
+        return knowledgeBlockRepository.findByDepartment(idDepartment);
     }
 }

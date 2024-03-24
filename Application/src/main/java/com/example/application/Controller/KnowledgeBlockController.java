@@ -1,5 +1,6 @@
 package com.example.application.Controller;
 
+import com.example.library.DTO.KnowledgeBlockDTO;
 import com.example.library.Model.Department;
 import com.example.library.Model.KnowledgeBlock;
 import com.example.library.Service.KnowledgeBlockService;
@@ -26,8 +27,8 @@ public class KnowledgeBlockController {
         return knowledgeBlockService.findById(id);
     }
 
-    @GetMapping("/knowledgeBlockDepartment")
-    public Optional<KnowledgeBlock> getKnowledgeBlockByDepartment(@RequestParam String department) {
-        return knowledgeBlockService.findByDepartment(department);
+    @GetMapping("/findByDepartment")
+    public List<KnowledgeBlockDTO> getKnowledgeBlockByDepartment(@RequestParam("idDepartment") Long id) {
+        return knowledgeBlockService.findByDepartment(id);
     }
 }

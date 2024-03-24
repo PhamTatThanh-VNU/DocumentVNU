@@ -1,5 +1,6 @@
 package com.example.library.Service;
 
+import com.example.library.DTO.KnowledgeBlockDTO;
 import com.example.library.Model.Department;
 import com.example.library.Model.KnowledgeBlock;
 
@@ -10,5 +11,5 @@ public interface KnowledgeBlockService {
     List<KnowledgeBlock> findAll();
     Optional<KnowledgeBlock> findById(Long id);
 
-    Optional<KnowledgeBlock> findByDepartment(String department);
+    List<KnowledgeBlockDTO> findByDepartment(Long idDepartment);
 }
